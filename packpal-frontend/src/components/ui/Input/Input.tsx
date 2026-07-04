@@ -1,6 +1,7 @@
 import { cn } from "@/utils/cn";
 import { ui } from "../styles";
 import type { InputProps } from "./Input.types";
+import { useId } from "react";
 
 export default function Input({
   label,
@@ -12,9 +13,8 @@ export default function Input({
   id,
   ...props
 }: InputProps) {
-  const inputId =
-    id ??
-    `input-${Math.random().toString(36).slice(2, 9)}`;
+  const generatedId = useId();
+const inputId = id ?? generatedId;
 
   return (
     <div className="w-full">

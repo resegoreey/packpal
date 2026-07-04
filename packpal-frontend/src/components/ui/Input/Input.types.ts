@@ -1,6 +1,6 @@
 import {
-  InputHTMLAttributes,
-  ReactNode,
+  type InputHTMLAttributes,
+  type ReactNode,
 } from "react";
 
 export interface InputProps
