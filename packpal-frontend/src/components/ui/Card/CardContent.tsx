@@ -1,14 +1,22 @@
 import { type ReactNode } from "react";
+import { cn } from "@/utils/cn";
 
-interface Props {
+interface CardContentProps {
   children: ReactNode;
+  className?: string;
 }
 
 export default function CardContent({
   children,
-}: Props) {
+  className,
+}: CardContentProps) {
   return (
-    <div className="p-5">
+    <div
+      className={cn(
+        "p-5",
+        className
+      )}
+    >
       {children}
     </div>
   );

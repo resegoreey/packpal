@@ -1,14 +1,17 @@
+import { cn } from "@/utils/cn";
 import { type ReactNode } from "react";
 
-interface Props {
+interface CardFooterProps {
   children: ReactNode;
+  className?: string;
 }
 
 export default function CardFooter({
   children,
-}: Props) {
+  className,
+}: CardFooterProps) {
   return (
-    <div className="border-t border-[var(--border)] p-5">
+    <div className={cn("border-t border-[var(--border)] p-5", className)}>
       {children}
     </div>
   );

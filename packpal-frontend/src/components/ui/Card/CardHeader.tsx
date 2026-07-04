@@ -1,14 +1,14 @@
+import { cn } from "@/utils/cn";
 import { type ReactNode } from "react";
 
-interface Props {
+interface CardHeaderProps {
   children: ReactNode;
+  className?: string;
 }
 
-export default function CardHeader({
-  children,
-}: Props) {
+export default function CardHeader({ children, className }: CardHeaderProps) {
   return (
-    <div className="border-b border-[var(--border)] p-5">
+    <div className={cn("border-b border-[var(--border)] p-5", className)}>
       {children}
     </div>
   );

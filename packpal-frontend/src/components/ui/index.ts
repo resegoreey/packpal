@@ -12,3 +12,4 @@ export {
   CardContent,
   CardFooter,
 } from "./Card";
+export { default as FeatureCard } from "./FeatureCard";
