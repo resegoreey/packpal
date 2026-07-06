@@ -6,10 +6,6 @@ export { default as Spinner } from "./Spinner";
 export { default as EmptyState } from "./EmptyState";
 export { default as Modal } from "./Modal";
 
-export {
-  Card,
-  CardHeader,
-  CardContent,
-  CardFooter,
-} from "./Card";
+export { Card, CardHeader, CardContent, CardFooter } from "./Card";
 export { default as FeatureCard } from "./FeatureCard";
+export { default as Progress } from "./Progress";

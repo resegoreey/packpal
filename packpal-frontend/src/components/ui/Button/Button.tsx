@@ -13,6 +13,9 @@ const variantClasses = {
   danger: "bg-[var(--danger)] hover:bg-[var(--danger-hover)] text-white",
 
   ghost: "bg-transparent hover:bg-[var(--secondary)] text-[var(--text)]",
+
+  outline:
+    "border border-[var(--border)] bg-transparent text-[var(--text)] hover:bg-[var(--surface)]",
 };
 
 const sizeClasses = {
@@ -39,10 +42,12 @@ export default function Button({
         "inline-flex items-center justify-center gap-2",
         "rounded-xl",
         "font-medium",
-        "transition-all duration-200",
+        "transition-colors transition-transform duration-200",
         "shadow-sm",
 
         "hover:shadow-md",
+
+        "active:scale-[0.98]",
 
         "focus:outline-none",
         "focus:ring-2",
@@ -50,6 +55,7 @@ export default function Button({
         "focus:ring-offset-2",
 
         "disabled:pointer-events-none",
+        "disabled:cursor-not-allowed",
         "disabled:opacity-60",
 
         variantClasses[variant],

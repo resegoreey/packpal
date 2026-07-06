@@ -1,4 +1,5 @@
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 export default function LandingPage() {
   return (
@@ -7,6 +8,7 @@ export default function LandingPage() {
 
       <main>
         {/* Hero */}
+         <Hero />
 
         {/* Features */}
 
