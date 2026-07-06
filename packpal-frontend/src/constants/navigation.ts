@@ -11,8 +11,9 @@ export const NAVIGATION = [
     href: "#how-it-works",
   },
 
-  {
-    label: "Sign In",
-    href: ROUTES.LOGIN,
-  },
 ];
+
+export const HEADER_ACTION = {
+  label: "Get Started",
+  href: ROUTES.REGISTER,
+};

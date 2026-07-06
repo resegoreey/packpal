@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Logo } from "@/components/common";
 import { Button } from "@/components/ui";
 
-import { NAVIGATION } from "@/constants/navigation";
+import { NAVIGATION, HEADER_ACTION } from "@/constants/navigation";
 import { ROUTES } from "@/constants/routes";
 
 export default function Header() {
@@ -14,19 +14,26 @@ export default function Header() {
 
         <nav className="hidden items-center gap-8 md:flex">
           {NAVIGATION.map((item) => (
-            <Link
+            <a
               key={item.label}
-              to={item.href}
+              href={item.href}
               className="text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--primary)]"
             >
               {item.label}
-            </Link>
+            </a>
           ))}
         </nav>
 
-        <Button size="sm">
-          Get Started
-        </Button>
+        <div className="flex items-center gap-4">
+          <Link
+            to={ROUTES.LOGIN}
+            className="hidden text-sm font-medium text-[var(--text-muted)] transition-colors hover:text-[var(--primary)] md:block"
+          >
+            Sign In
+          </Link>
+
+          <Button size="sm">{HEADER_ACTION.label}</Button>
+        </div>
       </div>
     </header>
   );
