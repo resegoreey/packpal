@@ -47,8 +47,29 @@ export const FEATURES = [
 ];
 
 export const HOW_IT_WORKS = [
-  "Create a Trip",
-  "Add Packing Items",
-  "Receive Reminder",
-  "Travel with Confidence",
+  {
+    step: "01",
+    title: "Create a Trip",
+    description:
+      "Add your destination and departure date to start planning.",
+  },
+  {
+    step: "02",
+    title: "Build Your Packing List",
+    description:
+      "Add everything you need to pack or remember before you leave.",
+  },
+  {
+    step: "03",
+    title: "Receive Smart Reminders",
+    description:
+      "PackPal reminds you the day before your trip to review your list.",
+  },
+  {
+    step: "04",
+    title: "Travel With Confidence",
+    description:
+      "Head off knowing you haven't forgotten the important things.",
+  },
 ];
+
