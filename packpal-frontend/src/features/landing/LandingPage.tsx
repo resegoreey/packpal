@@ -1,5 +1,7 @@
 import Header from "./components/Header";
 import Hero from "./components/Hero";
+import Features from "./components/Features";
+
 
 export default function LandingPage() {
   return (
@@ -11,6 +13,7 @@ export default function LandingPage() {
          <Hero />
 
         {/* Features */}
+        <Features />
 
         {/* How It Works */}
 
