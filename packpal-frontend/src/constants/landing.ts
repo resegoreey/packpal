@@ -6,6 +6,8 @@ import {
 } from "lucide-react";
 
 export const HERO = {
+  announcement: "✈ Your travel companion",
+  
   title: "Travel prepared.",
 
   subtitle:

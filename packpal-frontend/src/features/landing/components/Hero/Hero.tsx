@@ -5,24 +5,44 @@ import { Button } from "@/components/ui";
 import { HERO } from "@/constants/landing";
 import { ROUTES } from "@/constants/routes";
 import HeroShowcase from "./HeroShowcase";
+import { motion } from "framer-motion";
+
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function Hero() {
   return (
-    <section className="overflow-hidden py-24">
-      <div className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-        <div className="mb-6 rounded-full border border-[var(--border)] bg-[var(--surface)] px-4 py-2 text-sm text-[var(--text-muted)]">
-          ✈ Your travel companion
-        </div>
+    <section className="overflow-hidden py-32 lg:py-40">
+      <motion.div
+        variants={staggerContainer}
+        initial="hidden"
+        animate="visible"
+        className="mx-auto flex max-w-4xl flex-col items-center px-6 text-center"
+      >
+        <motion.div
+          variants={fadeUp}
+          className="mb-8 rounded-full border border-[var(--border)] bg-[var(--surface)] px-5 py-2 text-sm font-medium text-[var(--text-muted)]"
+        >
+          {HERO.announcement}
+        </motion.div>
 
-        <h1 className="max-w-3xl text-5xl font-extrabold tracking-tight text-[var(--text)] md:text-6xl">
+        <motion.h1
+          variants={fadeUp}
+          className="max-w-4xl text-5xl font-extrabold tracking-tight text-[var(--text)] md:text-6xl lg:text-7xl"
+        >
           {HERO.title}
-        </h1>
+        </motion.h1>
 
-        <p className="mt-6 max-w-2xl text-lg leading-8 text-[var(--text-muted)]">
+        <motion.p
+          variants={fadeUp}
+          className="mt-8 max-w-3xl text-lg leading-8 text-[var(--text-muted)] md:text-xl"
+        >
           {HERO.subtitle}
-        </p>
+        </motion.p>
 
-        <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+        <motion.div
+          variants={fadeUp}
+          className="mt-12 flex flex-col gap-5 sm:flex-row"
+        >
           <Link to={ROUTES.REGISTER}>
             <Button size="lg">
               {HERO.primaryButton}
@@ -36,11 +56,13 @@ export default function Hero() {
               {HERO.secondaryButton}
             </Button>
           </a>
-        </div>
+        </motion.div>
 
         {/* Illustration goes here */}
-        <HeroShowcase />
-      </div>
+        <motion.div variants={fadeUp}>
+          <HeroShowcase />
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

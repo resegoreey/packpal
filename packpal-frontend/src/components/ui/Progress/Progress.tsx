@@ -1,5 +1,8 @@
 import { cn } from "@/utils/cn";
 import type { ProgressProps } from "./Progress.types";
+import { motion } from "framer-motion";
+
+import { fadeUp, staggerContainer } from "@/lib/animations";
 
 export default function Progress({
   value,
@@ -7,19 +10,26 @@ export default function Progress({
   showLabel = false,
   className,
 }: ProgressProps) {
-  const percentage = Math.min(
-    Math.max((value / max) * 100, 0),
-    100
-  );
+  const percentage = Math.min(Math.max((value / max) * 100, 0), 100);
 
   return (
     <div className={cn("w-full", className)}>
       <div className="h-3 w-full overflow-hidden rounded-full bg-[var(--secondary)]">
-        <div
-          className="h-full rounded-full bg-[var(--primary)] transition-all duration-700 ease-out"
-          style={{
+        <motion.div
+          initial={{
+            width: 0,
+          }}
+          whileInView={{
             width: `${percentage}%`,
           }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="h-full rounded-full bg-[var(--primary)]"
         />
       </div>
 
